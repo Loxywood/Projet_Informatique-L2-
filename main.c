@@ -1,13 +1,19 @@
 #include "raylib.h"
+#include "plateau.h"
+
+#include <stdio.h>
+
 //Création d'une tuile :
 
 int main(void)
 {
     //Ouverture de la fenêtre :
-    InitWindow(800, 450, "Test Raylib");
+    InitWindow(1920, 1080, "Test Raylib");
+    Texture2D grass_tile = LoadTexture("assets/grass_tile.png"); // chargement en mémoire de la texture
 
-    //Chargement des textures :
-    Texture2D tile = LoadTexture("assets/floor_tile.png");
+
+    Plateau game;
+    CreatePlateau(&game, grass_tile);
     SetTargetFPS(60);
 
 
@@ -16,17 +22,14 @@ int main(void)
         //Dessin, reset à chaque frame.
         BeginDrawing();
         ClearBackground(RAYWHITE);
+        
+        DrawPlateau(&game);
 
-        //Test emboîtement des tuiles.
-        DrawTexture(tile,0,0,WHITE);
-        DrawTexture(tile,220,125,WHITE);
-        DrawTexture(tile,440,250,WHITE);
-        DrawTexture(tile,0,250,WHITE);
         DrawText("Ca marche !", 300, 200, 40, DARKGRAY);
         EndDrawing();
     }
 
-    UnloadTexture(tile);
+    DelPlateau(&game);
     CloseWindow();
     return 0;
 }
