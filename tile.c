@@ -33,9 +33,3 @@ void DrawTile(Tile *t, float x, float y)
     DrawTextureEx(t->texture, (Vector2){x, t->posY}, 0.0, 0.3, WHITE);
     //0.3 pour mettre a echelle 3/10 vu que l'assets fait 500x500, a voir pour changer la taille 
 }
-    
-
-void UnloadTile(Tile t)
-{
-    UnloadTexture(t.texture);
-}

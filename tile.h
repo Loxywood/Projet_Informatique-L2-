@@ -13,6 +13,5 @@ typedef struct Tile {
 // Prototypes
 Tile CreateTile(Texture2D texture, float delay);
 void DrawTile(Tile *t, float x, float y); //prend un pointeur pour Tile pour pouvoir modifier ses attributs
-void UnloadTile(Tile t);
 
 #endif

@@ -20,11 +20,3 @@ void DrawPlateau(Plateau *p) {
         }
     }
 }
-
-void DelPlateau(Plateau *p) {
-    for (int x = 0; x < PLATEAU_WIDTH; x++) {
-        for (int y = 0; y < PLATEAU_HEIGHT; y++) {
-            UnloadTile(p->cases[x][y]);
-        }
-    }
-}

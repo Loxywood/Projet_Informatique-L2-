@@ -29,7 +29,7 @@ int main(void)
         EndDrawing();
     }
 
-    DelPlateau(&game);
+    UnloadTexture(grass_tile);
     CloseWindow();
     return 0;
 }

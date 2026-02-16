@@ -11,6 +11,5 @@ typedef struct Plateau {
 
 void CreatePlateau(Plateau *p, Texture2D texture);
 void DrawPlateau(Plateau *p);
-void DelPlateau(Plateau *p);
 
 #endif
