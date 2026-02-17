@@ -3,6 +3,8 @@
 
 #include "raylib.h"
 
+#define TILE_SCALE 0.2
+
 typedef struct Tile {
     Texture2D texture;
     float posX;
