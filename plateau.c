@@ -17,15 +17,12 @@ void DrawPlateau(Plateau *p) {
     
     // largeur d'une tuile dans la fenetre ( largeur du png * echelle)
     float tileWidth = p->cases[0][0].texture.width * TILE_SCALE;
-    
-    float spacing_x = tileWidth / 2.3; 
-    float spacing_y = spacing_x / 1.75;
-    
+
     for (int x = 0; x < PLATEAU_WIDTH; x++) {
         for (int y = 0; y < PLATEAU_HEIGHT; y++) {
 
-            float posIsoX = offset_x + (x - y) * spacing_x; 
-            float posIsoY = offset_y + (x + y) * spacing_y;
+            float posIsoX = offset_x + (x - y) * (tileWidth / 2.0);
+            float posIsoY = offset_y + (x + y) * (tileWidth / 4.0);
             DrawTile(&p->cases[x][y], posIsoX, posIsoY);
         }
     }

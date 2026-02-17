@@ -7,7 +7,7 @@ int main(void)
 {
     //Ouverture de la fenêtre :
     InitWindow(1920, 1080, "Test Raylib");
-    Texture2D grass_tile = LoadTexture("assets/grass_tile.png"); // chargement en mémoire de la texture
+    Texture2D red_grass_tile = LoadTexture("assets/red_tile.png"); // chargement en mémoire de la texture
 
 
     Plateau game;
