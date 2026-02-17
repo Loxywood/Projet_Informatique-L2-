@@ -3,8 +3,6 @@
 
 #include <stdio.h>
 
-//Création d'une tuile :
-
 int main(void)
 {
     //Ouverture de la fenêtre :
@@ -25,7 +23,7 @@ int main(void)
         
         DrawPlateau(&game);
 
-        DrawText("Ca marche !", 300, 200, 40, DARKGRAY);
+        DrawFPS(300, 200);
         EndDrawing();
     }
 

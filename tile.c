@@ -4,9 +4,9 @@
 Tile CreateTile(Texture2D texture, float delay)
 {
     Tile t;
-    t.posY = 1;
+    t.posY = -100;
     t.texture = texture;
-    t.delay = delay* 2;
+    t.delay = delay;
     return t;
 }
 
@@ -28,8 +28,6 @@ void DrawTile(Tile *t, float x, float y)
             t->posY = targetY;
         }
     }
-
     //(Texture2D texture, Vector2 position, float rotation, float scale, Color tint);
-    DrawTextureEx(t->texture, (Vector2){x, t->posY}, 0.0, 0.3, WHITE);
-    //0.3 pour mettre a echelle 3/10 vu que l'assets fait 500x500, a voir pour changer la taille 
+    DrawTextureEx(t->texture, (Vector2){x, t->posY}, 0.0, TILE_SCALE, WHITE);
 }
