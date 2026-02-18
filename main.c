@@ -1,5 +1,5 @@
 #include "raylib.h"
-#include "plateau.h"
+#include "board.h"
 
 #include <stdio.h>
 
@@ -10,8 +10,8 @@ int main(void)
     Texture2D red_grass_tile = LoadTexture("assets/red_tile.png"); // chargement en mémoire de la texture
 
 
-    Plateau game;
-    CreatePlateau(&game, grass_tile);
+    Board game;
+    CreateBoard(&game, red_grass_tile);
     SetTargetFPS(60);
 
 
@@ -21,13 +21,13 @@ int main(void)
         BeginDrawing();
         ClearBackground(RAYWHITE);
         
-        DrawPlateau(&game);
+        DrawBoard(&game);
 
         DrawFPS(300, 200);
         EndDrawing();
     }
 
-    UnloadTexture(grass_tile);
+    UnloadTexture(red_grass_tile);
     CloseWindow();
     return 0;
 }
