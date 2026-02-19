@@ -7,6 +7,7 @@ Tile CreateTile(Texture2D texture, float delay)
     t.posY = -100;
     t.texture = texture;
     t.delay = delay;
+    t.contain = EMPTY ;
     return t;
 }
 
