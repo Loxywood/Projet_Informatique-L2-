@@ -1,6 +1,7 @@
 #include "raylib.h"
 #include "plateau.h"
 #include "parcours.h"
+#include "entite.h"
 
 #include <stdio.h>
 
@@ -15,6 +16,7 @@ int main(void)
     CreatePlateau(&game, grass_tile);
     SetTargetFPS(60);
 
+    //////////////////////////////////////////////////////////////////////////test0
     Vector lieu = {2,5} ;
     int range = 3 ;
 
@@ -26,7 +28,16 @@ int main(void)
     for (int vect = 0 ; vect < data_mouvement.cursor_a ; vect++ ){
         //game.cases[data_mouvement.acces[vect].x ][data_mouvement.acces[vect].y ].texture = red_grass_tile ;
     }
+    //////////////////////////////////////////////////////////////////////////test0
 
+    //////////////////////////////////////////////////////////////////////////test1
+    Entite J ;
+    Entite Rat ;
+    initJoueur(&J) ;
+    initRat(&Rat) ;
+
+    printf("\n PV du joueur : %d \n PV du rat %d \n\n", J.PV, Rat.PV) ;
+    //////////////////////////////////////////////////////////////////////////test1
 
     while (!WindowShouldClose())
     {
@@ -38,6 +49,14 @@ int main(void)
 
         DrawFPS(300, 200);
         EndDrawing();
+
+        //////////////////////////////////////////////////////////////////////////test2
+        while(J.PV > 0 && Rat.PV > 0){
+            Rat.PV -= J.attaque ;
+            J.PV -= Rat.attaque ;
+            printf("\n PV du joueur : %d \n PV du rat %d \n\n", J.PV, Rat.PV) ;
+        }
+        //////////////////////////////////////////////////////////////////////////test2
     }
 
     UnloadTexture(grass_tile);
