@@ -21,8 +21,10 @@ void initJoueur(Entite *e) ;
 
 void initMur(Entite *e) ;
 
+void mouvement(int posx, int posy, int dirx, int diry, Plateau *P) ;
 
+void pousse(int posx, int posy, int dirx, int diry, Plateau *P) ;
 
-
+void attaque() ;
 
 #endif

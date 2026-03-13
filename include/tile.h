@@ -13,7 +13,7 @@ typedef struct Tile {
     float posX;
     float posY; // On stocke la hauteur de pixel en float, sera interprété en int pour l'affichage mais simplifie les calcul pour l'animation de chute
     float delay;
-    Entite e ;
+    Entite entite ;
 } Tile;
 
 // Prototypes

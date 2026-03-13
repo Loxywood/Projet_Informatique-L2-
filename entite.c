@@ -38,7 +38,21 @@ void initVide(Entite *e){
     e->portee = 0 ;
 }
 
-void conversion(Plateau P, int x, int y){
+
+void mouvement(int posx, int posy, int dirx, int diry, Plateau *P){ //a verifier
+    P->cases[dirx][diry].entite = P->cases[posx][posy].entite ; 
+    P->cases[dirx][diry].entite.x = dirx ;  P->cases[dirx][diry].entite.y = diry ; 
+    initVide(&P->cases[posx][posy].entite) ;
+}
+
+
+void pousse(int posx, int posy, int dirx, int diry, Plateau *P){
+    if (P->cases[posx + (dirx * 2)][posy + (diry *2)].entite.c == "V"){
+        mouvement(posx +dirx, posy + diry, posx + dirx*2, posy + diry*2, P ) ;
+    }
+}
+
+void attaque(){
 
 
 }
